@@ -1,0 +1,120 @@
+/* @import url() FONT IMPORTS MUST ALWAYS BE AT THE VERY TOP OF THIS FILE, ABOVE THE TAILWIND IMPORTS — DO NOT DELETE THIS COMMENT */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+/* CRITICAL: THE FOLLOWING TAILWIND IMPORTS MUST NEVER BE DELETED OR REORDERED — DO NOT DELETE THIS COMMENT */
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+/* END TAILWIND IMPORTS — ALL OTHER CSS MUST GO BELOW THIS LINE */
+
+/* ===== THEME VARIABLES ===== */
+[data-theme="dark"] {
+  --navy-400: #475569;
+  --navy-500: #334155;
+  --navy-600: #1E293B;
+  --navy-700: #1A2332;
+  --navy-800: #0F1729;
+  --navy-900: #0B1120;
+}
+[data-theme="light"] {
+  --navy-400: #94a3b8;
+  --navy-500: #cbd5e1;
+  --navy-600: #e2e8f0;
+  --navy-700: #ffffff;
+  --navy-800: #f1f5f9;
+  --navy-900: #e8ecf1;
+}
+/* ===== BASE STYLES ===== */
+@layer base {
+  body {
+    @apply bg-navy-800 font-sans antialiased overflow-hidden;
+  }
+}
+/* ===== LIGHT MODE TEXT & BORDER OVERRIDES ===== */
+/* In dark mode, text-white and text-slate-50 are fine. In light mode, we invert them. */
+[data-theme="light"] {
+  color: #1e293b;
+}
+[data-theme="light"] .text-white {
+  color: #0f172a !important;
+}
+[data-theme="light"] .text-slate-50 {
+  color: #0f172a !important;
+}
+[data-theme="light"] .text-slate-100 {
+  color: #1e293b !important;
+}
+[data-theme="light"] .text-slate-200 {
+  color: #334155 !important;
+}
+[data-theme="light"] .text-slate-300 {
+  color: #475569 !important;
+}
+[data-theme="light"] .text-slate-400 {
+  color: #64748b !important;
+}
+[data-theme="light"] .text-slate-500 {
+  color: #94a3b8 !important;
+}
+/* Border overrides for light mode */
+[data-theme="light"] .border-white\/10 {
+  border-color: rgba(15, 23, 42, 0.12) !important;
+}
+[data-theme="light"] .border-white\/20 {
+  border-color: rgba(15, 23, 42, 0.15) !important;
+}
+[data-theme="light"] .border-white\/5 {
+  border-color: rgba(15, 23, 42, 0.08) !important;
+}
+/* Divide overrides */
+[data-theme="light"] .divide-white\/5 > :not([hidden]) ~ :not([hidden]) {
+  border-color: rgba(15, 23, 42, 0.08) !important;
+}
+/* Background opacity overrides */
+[data-theme="light"] .bg-white\/10 {
+  background-color: rgba(15, 23, 42, 0.06) !important;
+}
+/* Selection color */
+[data-theme="light"] .selection\:bg-gold-500\/30 ::selection {
+  background-color: rgba(245, 158, 11, 0.3);
+}
+/* Placeholder text */
+[data-theme="light"] .placeholder\:text-slate-500::placeholder {
+  color: #94a3b8 !important;
+}
+/* Shadow overrides for light mode — add subtle shadows to cards */
+[data-theme="light"] .bg-navy-700 {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.04);
+}
+/* Gold text stays gold in both modes */
+[data-theme="light"] .text-gold-400,
+[data-theme="light"] .text-gold-500 {
+  color: #D97706 !important;
+}
+/* Scrollbar for light mode */
+[data-theme="light"] {
+  scrollbar-color: #cbd5e1 #f1f5f9;
+}
+/* ===== CUSTOM SCROLLBAR ===== */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+[data-theme="dark"] ::-webkit-scrollbar-thumb {
+  background: #334155;
+  border-radius: 3px;
+}
+[data-theme="dark"] ::-webkit-scrollbar-thumb:hover {
+  background: #475569;
+}
+[data-theme="light"] ::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 3px;
+}
+[data-theme="light"] ::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
